@@ -1030,3 +1030,109 @@ footer {
 .btn-voltar-home:hover {
   opacity: 0.8;
 }
+
+/* Container principal do Post */
+.post-container {
+  /* Fundo semitransparente (verde/escuro) para se destacar sobre a imagem de fundo */
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px); /* Efeito de vidro desfocado no fundo */
+}
+
+/* Cabeçalho (Avatar + Nome) */
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Círculo do Avatar */
+.post-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #2d4a3e; /* Verde do tema Fit Friends */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Informações do Usuário */
+.post-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-user strong {
+  color: #1a2e26;
+  font-size: 1rem;
+}
+
+.post-user span {
+  color: #666666;
+  font-size: 0.85rem;
+}
+
+/* Conteúdo do Texto */
+.post-content p {
+  color: #333333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Botões de Ação */
+.post-actions {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #eeeeee;
+}
+
+.post-actions button {
+  background: transparent;
+  border: none;
+  color: #00eb89;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.post-actions button:hover {
+  background-color: rgba(45, 74, 62, 0.1);
+  color: #00f80c; /* Muda de cor ao passar o mouse para curtir */
+}
+
+/* Container da imagem do treino */
+.treino-imagem-container {
+  width: 100%;
+  height: 200px; /* Altura fixa padronizada para todos os cards */
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Regra geral de ajuste proporcional para todas as imagens */
+.treino-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta e ajusta a imagem sem distorcer */
+  object-position: center;
+  display: block;
+}
+
+/* Estilos agrupados para os Treinos A, B e C */
+.treino-imagem-a,
+.treino-imagem-b,
+.treino-imagem-c {
+  object-position: center;
+}
+
