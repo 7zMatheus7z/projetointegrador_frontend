@@ -3,32 +3,40 @@ import '../../stylo_css/stylo.css';
 import Post from '../../componentes/Post';
 import type { tpFeed } from '../../types/feed';
 
-// 1. IMPORTAMOS O SERVIÇO AQUI (Verifique se a sua pasta se chama 'services' ou 'servicos')
-import { carregarFeed } from '../../services/timeline.service'; 
+// 1. MUDANÇA AQUI: Importamos o 'api' centralizado em vez do timeline.service
+import { api } from '../../services/api'; 
 
 function Home() {
     const [novoPostTexto, setNovoPostTexto] = useState('');
     const [feeds, setFeeds] = useState<tpFeed[]>([]);
 
-    // 2. FUNÇÃO LIMPA: Agora só chama o serviço e guarda os dados!
+    // 2. MUDANÇA AQUI: Agora chama api.CarregarPosts()
     const carregarFeedAsync = async () => {
-        const dados = await carregarFeed();
+        const dados = await api.CarregarPosts();
         setFeeds(dados);
     }
 
-    const handlePostar = (e:any) => {
+    // 3. MUDANÇA AQUI: Adicionado 'async' para poder usar o 'await' lá embaixo
+    const handlePostar = async (e: any) => {
         e.preventDefault();
+
         if (novoPostTexto.trim() === '') {
             alert("Aviso: A barra de texto está vazia!");
             return;
         }
 
-        // 3. CORRIGIDO: Usa Date.now() para o ID não repetir e 'novoPostTexto' para o texto real
         const novoPostObj = {
             userId: 1,
             id: Date.now(), 
             title: 'Novo Post FitFriends',
             body: novoPostTexto 
+        };
+
+        // 4. MUDANÇA AQUI: Envia o post para o back-end via api.ts
+        try {
+            await api.CriarPost(novoPostObj);
+        } catch (erro) {
+            console.error("Erro ao salvar no servidor, exibindo localmente:", erro);
         }
          
         setFeeds([novoPostObj, ...feeds]);
@@ -54,13 +62,12 @@ function Home() {
 
             <div className='home-detalhes'>
                 {feeds.map((post) => (
-                    // 4. CORRIGIDO: O Post agora recebe as propriedades para desenhar os dados na tela!
                     <Post 
                         key={post.id} 
                         autor={post.id > 1000 ? 'Erica Ribeiro' : `Usuário ${post.userId}`} 
                         arroba={post.id > 1000 ? '@erica.sr' : `@user${post.userId}`}
                         tempo="agora"
-                        conteudo={post.body} 
+                        conteudo={post.id > 1000 ? post.body : 'Alguém anima um treino de musculação ou partida de basquete hoje?'} 
                     />                        
                 ))}
             </div>
