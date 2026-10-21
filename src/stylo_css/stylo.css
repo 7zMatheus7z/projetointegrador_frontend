@@ -1030,3 +1030,198 @@ footer {
 .btn-voltar-home:hover {
   opacity: 0.8;
 }
+
+
+
+
+post-container {
+  /* Fundo semitransparente (verde/escuro) para se destacar sobre a imagem de fundo */
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px); /* Efeito de vidro desfocado no fundo */
+}
+
+/* Cabeçalho (Avatar + Nome) */
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Círculo do Avatar */
+.post-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #2d4a3e; /* Verde do tema Fit Friends */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Informações do Usuário */
+.post-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-user strong {
+  color: #1a2e26;
+  font-size: 1rem;
+}
+
+.post-user span {
+  color: #666666;
+  font-size: 0.85rem;
+}
+
+/* Conteúdo do Texto */
+.post-content p {
+  color: #333333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Botões de Ação */
+.post-actions {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #eeeeee;
+}
+
+.post-actions button {
+  background: transparent;
+  border: none;
+  color: #00eb89;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.post-actions button:hover {
+  background-color: rgba(45, 74, 62, 0.1);
+  color: #00f80c; /* Muda de cor ao passar o mouse para curtir */
+}
+
+/* Container da imagem do treino */
+.treino-imagem-container {
+  width: 100%;
+  height: 200px; /* Altura fixa padronizada para todos os cards */
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Regra geral de ajuste proporcional para todas as imagens */
+.treino-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta e ajusta a imagem sem distorcer */
+  object-position: center;
+  display: block;
+}
+
+/* Estilos agrupados para os Treinos A, B e C */
+.treino-imagem-a,
+.treino-imagem-b,
+.treino-imagem-c {
+  object-position: center;
+}
+
+
+.home-container {
+    background-image: url('https://nutrily.app.br/assets/hero-background-DGzwTeH8.png');
+    
+    /* Faz a imagem se ajustar inteira dentro da tela sem cortar nenhuma borda */
+    background-size: contain; 
+    
+    /* Centraliza a imagem na página */
+    background-position: center top; 
+    background-repeat: no-repeat;
+    
+    /* Garante uma cor de fundo de preenchimento para as áreas que a imagem não cobrir */
+    background-color: #dce5dd; 
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Remove o fundo escuro/sólido das áreas internas para não cobrirem a imagem */
+.home-master,
+.home-detalhes {
+    background-color: transparent;
+    flex: 1; /* Faz a área de conteúdo se expandir para empurrar o rodapé para baixo */
+}
+
+/* Deixa o rodapé semi-transparente para não cobrir totalmente a ilustração inferior */
+.footer {
+    background-color: rgba(43, 68, 59, 0.9);
+    margin-top: auto;
+}
+
+.home-master {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 15px;
+    margin: 20px auto;
+}
+
+header, nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+}
+
+/* 1. Aplica o fundo completo na página inteira */
+body {
+    background-image: url('https://nutrily.app.br/assets/hero-background-DGzwTeH8.png') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-color: #dce5dd !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Remove o fundo sólido de todos os containers pai da página de treino */
+#root,
+.treino-master,
+.treino-grid,
+.treino-header {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 3. Garante que o container de treino ocupe toda a altura visível */
+.treino-master {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* 4. Mantém os cards brancos e bem visíveis sobre o fundo ilustrado */
+.treino-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Branco suave com leve transparência */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+
+
