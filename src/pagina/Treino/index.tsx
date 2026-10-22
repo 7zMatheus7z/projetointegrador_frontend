@@ -29,4 +29,4 @@ function Treino() {
     );
 }
 
-export default Treino;
+export default Treino; 
