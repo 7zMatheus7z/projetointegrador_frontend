@@ -30,3 +30,8 @@ function Treino() {
 }
 
 export default Treino;
+ryryry
+
+ryhryhry
+
+rtyttyhaerrrrrrrrrrrrrrrrrrrrrrrrrrrrr
